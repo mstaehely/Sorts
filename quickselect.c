@@ -33,7 +33,7 @@ int quickselect(int arr[], int left, int right, int k) {
     if (left == right) {
         return left;
     }
-    int pivot = right;
+    int pivot = left + (rand() % (right - left + 1));
     pivot = partition(arr, left, right, right);
     if (k == pivot) {
         return k;
@@ -58,7 +58,5 @@ int main(int argv, char** argc) {
     printf("\n");
     quickselect(arr, 0, 9, 6);
 
-    for (int i = 0; i < 10; i++) {
-        printf("%d:%d ", i, arr[i]);
-    }
+    printf("Pivot: 6, value: %d", arr[6]);
 }
